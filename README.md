@@ -20,8 +20,8 @@ Forked and enhanced from [**myst-templates/arxiv_two_column**](https://github.co
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/your-username/arxiv-two-column-template.git
-cd arxiv-two-column-template
+git clone https://github.com/yujmo/arXiv-template.git
+cd arXiv-template
 ```
 
 ### 2. Basic Usage
@@ -86,8 +86,8 @@ The two-column format:
 
 We welcome all contributions!
 
-- Report bugs or submit feature requests via [Issues](https://github.com/your-username/arxiv-two-column-template/issues)
-- Submit improvements via [Pull Requests](https://github.com/your-username/arxiv-two-column-template/pulls)
+- Report bugs or submit feature requests via Issues
+- Submit improvements via Pull Requests
 
 ---
 

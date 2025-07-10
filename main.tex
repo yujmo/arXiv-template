@@ -1,0 +1,308 @@
+\documentclass[twocolumn, switch]{article} % Method A for two-column formatting
+
+\usepackage{preprint}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%% Math packages
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+
+%% Bibliography options
+\usepackage[numbers,square]{natbib}
+\bibliographystyle{unsrtnat}
+%\usepackage{natbib}
+%\bibliographystyle{Geology}
+
+%% General packages
+\usepackage[utf8]{inputenc}	% allow utf-8 input
+\usepackage[T1]{fontenc}	% use 8-bit T1 fonts
+\usepackage{xcolor}		% colors for hyperlinks
+\usepackage[colorlinks = true,
+            linkcolor = purple,
+            urlcolor  = blue,
+            citecolor = cyan,
+            anchorcolor = black]{hyperref}	% Color links to references, figures, etc.
+\usepackage{booktabs} 		% professional-quality tables
+\usepackage{nicefrac}		% compact symbols for 1/2, etc.
+\usepackage{microtype}		% microtypography
+\usepackage{lineno}		% Line numbers
+\usepackage{float}			% Allows for figures within multicol
+%\usepackage{multicol}		% Multiple columns (Method B)
+
+\usepackage{lipsum}		%  Filler text
+
+%% Special figure caption options
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[name={Supplementary Figure}]{suppfigure}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+
+%% Section title spacing  options
+%% Adjust these values to make section titles more compact or spaced out
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 3pt minus 3pt}{1pt plus 1pt minus 1pt}
+\titlespacing\subsection{0pt}{10pt plus 3pt minus 3pt}{1pt plus 1pt minus 1pt}
+\titlespacing\subsubsection{0pt}{8pt plus 3pt minus 3pt}{1pt plus 1pt minus 1pt}
+
+
+%%%%%%%%%%%%%%%%   Title   %%%%%%%%%%%%%%%%
+\title{A preprint template for LaTeX users}
+
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{xcolor}
+\PassOptionsToPackage{colorlinks=true,linkcolor=gray,urlcolor=gray}{hyperref}
+
+%% Add watermark with submission status
+\newcommand{\AddMyWatermarks}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Left watermark
+    \node[rotate=90, color=gray!60, scale=1] at ([xshift=-4.05in,yshift=0in]current page.center) {%
+      \href{https://doi.org/}{Publication doi}%
+    };
+    % Right watermark
+    \node[rotate=90, color=gray!60, scale=1] at ([xshift=3.9in,yshift=0in]current page.center) {%
+      \href{https://doi.org/}{Preprint doi}%
+    };
+    % Bottom watermark
+    \node[color=gray!90, scale=1] at ([xshift=0in,yshift=-5in]current page.center) {%
+      This is the author's accepted manuscript. The final version will appear in XXXX 2025, © XXXX 2025.%
+    };
+  \end{tikzpicture}%
+}
+
+% Add watermark to the background on the first page
+\AddToShipoutPictureBG*{\AddMyWatermarks}
+
+%%%%%%%%%%%%%%%  Author list  %%%%%%%%%%%%%%%
+\usepackage{titling}
+\usepackage{orcidlink}
+\usepackage{footmisc}
+\setlength{\droptitle}{-3em}
+
+
+\newcommand{\Author}[3]{% Name, ORCID, Institution
+  \textbf{#1}\textsuperscript{#2},\ \orcidlink{#3} %
+}
+
+\author{
+  \Author{Author 1}{1}{0000-0000-0000-0000} \and
+  \Author{Author 2}{1}{0000-0000-0000-0000}\and
+  \Author{Author 3}{2}{0000-0000-0000-0000}\and
+  \Author{Author 4}{2}{0000-0000-0000-0000} \and
+  \Author{Author 5}{3}{0000-0000-0000-0000} \and
+  \Author{Author 6}{3}{0000-0000-0000-0000}\and
+  \Author{Author 7}{4}{0000-0000-0000-0000} \and
+  \Author{Author 8}{4}{0000-0000-0000-0000}
+}
+
+\date{%
+  \textsuperscript{1}Department of Computer Science, University A\\
+  \textsuperscript{2}School of Engineering, University B\\
+  \textsuperscript{3}Department of Mathematics, University C\\
+  \textsuperscript{4}Institute of Technology, University D\\[1em]
+  \footnotesize \textbf{Corresponding author:} Author 2\texttt{<Author2@example.com>}\\
+  % \footnotesize \textbf{Principal investigator:} Author 1(\texttt{Author1@example.com})
+}
+
+
+%%%%%%%%%%%%%%    Front matter    %%%%%%%%%%%%%%
+\begin{document}
+
+\twocolumn[ % Method A for two-column formatting
+  \begin{@twocolumnfalse} % Method A for two-column formatting
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla. Curabitur auctor semper nulla. Donec varius orci eget risus. Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam. Duis eget orci sit amet orci dignissim rutrum. Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi auctor lorem non justo.
+\end{abstract}
+%\keywords{First keyword \and Second keyword \and More} % (optional)
+\vspace{0.35cm}
+
+  \end{@twocolumnfalse} % Method A for two-column formatting
+] % Method A for two-column formatting
+
+%\begin{multicols}{2} % Method B for two-column formatting (doesn't play well with line numbers), comment out if using method A
+
+
+%%%%%%%%%%%%%%%  Main text   %%%%%%%%%%%%%%%
+% \linenumbers
+
+\section{Template Description}
+
+This LaTeX template is a customized and optimized two-column format for arXiv preprint submissions.
+
+It is ideal for researchers seeking a reliable and well-tested two-column arXiv template with tailored improvements. The template maintains the clean and professional layout of the original while introducing enhancements for better compatibility, streamlined dependencies, and personalized formatting adjustments.
+
+To ensure proper bibliography compilation and facilitate submission to platforms like arXiv, it is necessary to obtain the generated \texttt{.bbl} file from your Overleaf project. After successful compilation, open the “Logs and output files” panel on the left side of the Overleaf interface, locate and open the \texttt{.bbl} file to view its contents. Copy the content into a local text file and save it with the \texttt{.bbl} extension, then upload this \texttt{.bbl} file back to your Overleaf project. When downloading the entire project as a zip archive, the \texttt{.bbl} file will be included, facilitating packaging and offline compilation. This process effectively prevents compilation errors caused by missing \texttt{.bbl} files during submission and ensures consistent and correct bibliography formatting.
+
+\vspace{1em}
+\noindent\textbf{Version 1.0 --- July 10, 2025}
+
+\section{Introduction}
+\lipsum[2]
+
+\lipsum[3]
+
+
+\section{Headings: first level}
+\label{sec:headings}
+
+\lipsum[7] See Section \ref{sec:headings}.
+
+\subsection{Headings: second level}
+\lipsum[5]
+\begin{equation}
+\xi _{ij}(t)= {\frac {\alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}{\sum _{i=1}^{N} \sum _{j=1}^{N} \alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}}
+\end{equation}
+
+\subsubsection{Headings: third level}
+\lipsum[6]
+
+\paragraph{Paragraph}
+\lipsum[7]
+
+\section{Examples of citations, figures, tables, references}
+\label{sec:others}
+\lipsum[8] \cite{kour2014real,kour2014fast} and see \cite{hadash2018estimate}.
+
+The documentation for \verb+natbib+ may be found at
+\begin{center}
+  \url{http://mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf}
+\end{center}
+Of note is the command \verb+\citet+, which produces citations
+appropriate for use in inline text.  For example,
+\begin{verbatim}
+   \citet{hasselmo} investigated\dots
+\end{verbatim}
+produces
+\begin{quote}
+  Hasselmo, et al.\ (1995) investigated\dots
+\end{quote}
+
+\begin{center}
+  \url{https://www.ctan.org/pkg/booktabs}
+\end{center}
+
+
+\subsection{Figures}
+\lipsum[10]
+See Figure \ref{fig:fig1}. Here is how you add footnotes. %\footnote{Sample of the first footnote.}
+\lipsum[11]
+
+\begin{figure}[H]
+  \centering
+  \fbox{\rule[-.5cm]{4cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \caption{Sample figure caption.}
+  \label{fig:fig1}
+\end{figure}
+
+\subsection{Arrays}
+\lipsum[11]
+\subsection{Arrays}
+
+A simple array
+\begin{equation}
+\left(
+\begin{array}{cccc}
+a+b+c & uv & x-y & 27\\
+a+b & u+v & z & 134
+\end{array}\right)
+\end{equation}
+
+
+\begin{equation}
+\left(
+\begin{array}{cccr}
+a+b+c & uv & x-y & 27\\
+a+b & u+v & z & 134
+\end{array}\right)
+\end{equation}
+
+\begin{equation}
+\left( \begin{array}{c|c|c|r}
+a+b+c & uv & x-y & 27\\ \hline
+a+b & u+v & z & 134
+\end{array}\right)
+\end{equation}
+
+
+\subsection{Algorithms}
+\lipsum[88]
+
+\begin{algorithm}[H]
+\caption{Cite from IEEE}\label{alg:alg1}
+\begin{algorithmic}
+\STATE 
+\STATE {\textsc{TRAIN}}$(\mathbf{X} \mathbf{T})$
+\STATE \hspace{0.5cm}$ \textbf{select randomly } W \subset \mathbf{X}  $
+\STATE \hspace{0.5cm}$ N_\mathbf{t} \gets | \{ i : \mathbf{t}_i = \mathbf{t} \} | $ \textbf{ for } $ \mathbf{t}= -1,+1 $
+\STATE \hspace{0.5cm}$ B_i \gets \sqrt{ \textsc{max}(N_{-1},N_{+1}) / N_{\mathbf{t}_i} } $ \textbf{ for } $ i = 1,...,N $
+\STATE \hspace{0.5cm}$ \hat{\mathbf{H}} \gets  B \cdot (\mathbf{X}^T\textbf{W})/( \mathbb{1}\mathbf{X} + \mathbb{1}\textbf{W} - \mathbf{X}^T\textbf{W} ) $
+\STATE \hspace{0.5cm}$ \beta \gets \left ( I/C + \hat{\mathbf{H}}^T\hat{\mathbf{H}} \right )^{-1}(\hat{\mathbf{H}}^T B\cdot \mathbf{T})  $
+\STATE \hspace{0.5cm}\textbf{return}  $\textbf{W},  \beta $
+\STATE 
+\STATE {\textsc{PREDICT}}$(\mathbf{X} )$
+\STATE \hspace{0.5cm}$ \mathbf{H} \gets  (\mathbf{X}^T\textbf{W} )/( \mathbb{1}\mathbf{X}  + \mathbb{1}\textbf{W}- \mathbf{X}^T\textbf{W}  ) $
+\STATE \hspace{0.5cm}\textbf{return}  $\textsc{sign}( \mathbf{H} \beta )$
+\end{algorithmic}
+\label{alg1}
+\end{algorithm}
+
+
+\subsection{Tables}
+\lipsum[12]
+See awesome Table \ref{tab:table}.
+
+\begin{table}[H]
+ \caption{Sample table title}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    \multicolumn{2}{c}{Part}                   \\
+    \cmidrule(r){1-2}
+    Name     & Description     & Size ($\mu$m) \\
+    \midrule
+    Dendrite & Input terminal  & $\sim$100     \\
+    Axon     & Output terminal & $\sim$10      \\
+    Soma     & Cell body       & up to $10^6$  \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:table}
+\end{table}
+
+\subsection{Lists}
+\begin{itemize}
+\item Lorem ipsum dolor sit amet
+\item consectetur adipiscing elit.
+\item Aliquam dignissim blandit est, in dictum tortor gravida eget. In ac rutrum magna.
+\end{itemize}
+
+\lipsum[6]
+
+%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%
+\footnotesize
+\section*{Acknowledgements}
+\lipsum[101]
+
+%%%%%%%%%%%%%%   Bibliography   %%%%%%%%%%%%%%
+\normalsize
+\bibliography{main}
+
+
+%%%%%%%%%%%%  Supplementary Figures  %%%%%%%%%%%%
+% \clearpage
+
+%%%%%%%%%%%% Supplementary Methods %%%%%%%%%%%%
+\footnotesize
+\section*{Supplementary material}
+\lipsum[101]
+
+\lipsum[102]
+
+\lipsum[103]
+
+%%%%%%%%%%%%%%%%   End   %%%%%%%%%%%%%%%%
+%\end{multicols}  % Method B for two-column formatting (doesn't play well with line numbers), comment out if using method A
+\end{document}
